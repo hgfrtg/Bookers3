@@ -1,0 +1,45 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-4">
+    <%= render 'users/info',{user:current_user} %>
+
+    <%= render 'side',{book:@book, user:current_user} %>
+  </div>
+
+  <div class="col-md-8">
+      <table class="table">
+        <h1>Books</h1>
+
+          <thead>
+            <tr>
+              <th>
+                
+              </th>
+              <th>Title</th>
+              <th>Opinion</th>
+            </tr>
+          </thead>
+
+          <% @books.each do |book| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format:'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
+              </td>
+              <td>
+                <%=link_to book.title, book_path(book), class: "book_#{book.id}" %>
+              </td>
+              <td>
+                <%= book.body %>
+              </td>
+              
+
+    <% end %>
+  </tr>
+</tbody>
+
+      </table>
+
+  </div>
+</div>
+</div>
