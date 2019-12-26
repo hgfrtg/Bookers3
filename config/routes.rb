@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 	  resource :favorites, only: [:create, :destroy]
 	  resource :book_comments, only: [:create, :destroy]
   end
-  resources :users, only:[:new,:index,:show, :update, :edit]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :relationships, only: [:index, :create, :destroy]
+  resources :users, only:[:new,:index,:show, :update, :edit] do
+  	 member do
+     get :followings, :followers
+    end
+  end
 end
