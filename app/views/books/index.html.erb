@@ -16,6 +16,7 @@
               <th>Title</th>
               <th>Opinion</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
 
@@ -47,6 +48,11 @@
                 <% end %>
                 <!-- ここまで -->
               </td>
+              <!-- ここからコメント -->
+                <td>
+                  <%= link_to "#{book.book_comments.count} コメント", book_path(book.id) %>
+                </td>
+              <!-- ここまで -->
 
     <% end %>
   </tr>
