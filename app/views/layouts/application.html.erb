@@ -38,6 +38,9 @@
          <% flash.each do |message_type, message| %>
           <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
           <% end %>
+
+          <!-- 検索機能 -->
+          <!-- ここまで -->
     <%= yield %>
       <div class="row">
         <div class="col-xs-3 col-xs-offset-9">
